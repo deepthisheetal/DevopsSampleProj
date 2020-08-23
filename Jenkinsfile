@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("dsheetu/DevopsSampleProj")
+        app = docker.build("deepthisheetal/DevopsSampleProj")
     }
 
     stage('Test image') {
