@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("dpulla/myapp")
+        app = docker.build("devops/myapp")
     }
 
     stage('Test image') {
