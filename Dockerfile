@@ -1,6 +1,6 @@
 FROM node:7-onbuild
 
-LABEL maintainer "deepthisheetal@gmail.com"
+LABEL maintainer "miiro@getintodevops.com"
 
 HEALTHCHECK --interval=5s \
             --timeout=5s \
