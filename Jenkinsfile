@@ -32,11 +32,11 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }*/
-
-            sh '/usr/local/bin/docker login login -p Dipu1you@ -u deepthisheetal'
+          docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-dsp') {
             sh '/usr/local/bin/docker images'
             sh '/usr/local/bin/docker tag e29e5ad6b3fa deepthisheetal/docker-hub-dsp:latest'
             sh '/usr/local/bin/docker push deepthisheetal/docker-hub-dsp' 
+        }
     }
    
  
