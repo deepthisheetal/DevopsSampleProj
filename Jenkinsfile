@@ -28,10 +28,18 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-dsp') {
+        /* docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-dsp') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
+        }*/
+        steps{
+        script {
+          docker.withRegistry( 'https://registry.hub.docker.com', 'docker-hub-dsp' ) {
+            dockerImage = docker.build https://github.com/deepthisheetal/DevopsSampleProj.git
+            dockerImage.push()
+          }
         }
+      }
     }
    
  
