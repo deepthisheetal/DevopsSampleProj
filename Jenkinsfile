@@ -35,8 +35,7 @@ node {
         steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', 'docker-hub-dsp' ) {
-            dockerImage = docker.build https://github.com/deepthisheetal/DevopsSampleProj.git
-            dockerImage.push()
+            sh 'docker images'
           }
         }
       }
