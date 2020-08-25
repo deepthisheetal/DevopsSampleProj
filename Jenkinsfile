@@ -18,7 +18,7 @@ node {
     }
 
     stage('Test image') {
-        /* Ideally, we would run a test framework against our image.
+        /* Ideally, we would run a test framework against our image. */
 
             sh 'echo "Tests passed"'
     }
