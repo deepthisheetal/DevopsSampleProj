@@ -33,7 +33,6 @@ node {
             app.push("latest")
         }*/
             sh 'docker images'
-      }
     }
    
  
