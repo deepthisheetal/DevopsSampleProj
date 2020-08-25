@@ -14,7 +14,7 @@ node {
         /* app = docker.build("deepthisheetal/docker-hub-dsp") */
         sh 'cd "/Users/dpulla/Documents/GIT_Practice/DevopsSampleProj"'
         sh 'echo "Dir Changed"'
-        sh 'docker build -t "deepthisheetal/docker-hub-dsp" .'
+        sh '/usr/local/bin/docker build -t "deepthisheetal/docker-hub-dsp" .'
     }
 
     stage('Test image') {
