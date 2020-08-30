@@ -28,6 +28,7 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }*/
+            sh 'cat my_password.txt | /usr/local/bin/docker login --username deepthisheetal --password-stdin'
             sh 'echo "Logged in"'
             sh '/usr/local/bin/docker images'
             sh '/usr/local/bin/docker push deepthisheetal/docker-hub-dsp'
