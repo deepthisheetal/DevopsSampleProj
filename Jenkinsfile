@@ -24,10 +24,6 @@ node {
     }
 
     stage('Deploy image') {
-        /* Finally, we'll push the image with two tags:
-         * First, the incremental build number from Jenkins
-         * Second, the 'latest' tag.
-         * Pushing multiple tags is cheap, as all the layers are reused. */
         /* docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-dsp') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
@@ -35,7 +31,6 @@ node {
             sh 'echo "Logged in"'
             sh '/usr/local/bin/docker images'
             sh '/usr/local/bin/docker push deepthisheetal/docker-hub-dsp'
-        }
     }
    
  
