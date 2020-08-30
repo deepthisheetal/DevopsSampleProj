@@ -4,8 +4,10 @@ node {
     environment {
         registry = "deepthisheetal/docker-hub-dsp"
         registryCredential = 'docker-hub-dsp'
+        def dockerHome = tool 'MyDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
-
+ 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
