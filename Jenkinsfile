@@ -1,11 +1,15 @@
 node {
     def app
 
+   stage('Initialize') {
+       def dockerHome = tool 'MyDocker'
+       env.PATH = "${dockerHome}/bin:${env.PATH}"
+       sh 'echo ${env.PATH}'
+    }
+
     environment {
         registry = "deepthisheetal/docker-hub-dsp"
         registryCredential = 'docker-hub-dsp'
-        def dockerHome = tool 'MyDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
  
     stage('Clone repository') {
