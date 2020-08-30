@@ -4,7 +4,6 @@ node {
    stage('Initialize') {
        def dockerHome = '/usr/local/bin/docker'
        env.PATH = "${dockerHome}/bin:${env.PATH}"
-       sh 'echo ${env.PATH}'
     }
 
     environment {
