@@ -2,7 +2,7 @@ node {
     def app
 
    stage('Initialize') {
-       def dockerHome = tool 'MyDocker'
+       def dockerHome = tool '/usr/local/bin/docker'
        env.PATH = "${dockerHome}/bin:${env.PATH}"
        sh 'echo ${env.PATH}'
     }
